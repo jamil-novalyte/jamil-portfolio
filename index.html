@@ -112,6 +112,9 @@ section.alt{background:var(--bg-2)}
 .node{background:rgba(255,255,255,.06);border:1px solid rgba(129,140,248,.4);border-radius:12px;padding:12px 14px;color:#dfe9f2;font-size:13px}
 .node b{display:block;color:#a5b4fc;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
 .node.core{grid-column:1/-1;text-align:center;background:linear-gradient(135deg,rgba(129,140,248,.3),rgba(129,140,248,.08));border-color:#818cf8}
+.also{margin-top:28px;padding:18px 22px;border:1px dashed var(--line);border-radius:16px;color:var(--ink-2);font-size:15px;background:#fff}
+.also b{color:var(--ink)}
+.also a{color:var(--accent);font-weight:600}
 .tenant{padding:30px;width:100%;color:#dfe9f2;font-size:13px}
 .tenant .row{display:flex;gap:10px;margin-bottom:10px}
 .tenant .box{flex:1;border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:12px;background:rgba(255,255,255,.04)}
@@ -337,7 +340,84 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </div>
       </article>
 
+      <article class="case flip">
+        <div class="case-media">
+          <div class="diagram" aria-label="CEQAnet Opportunity Desk pipeline diagram">
+            <div class="node"><b>Source</b>Public CEQAnet filings, looked up by State Clearinghouse number</div>
+            <div class="node"><b>Parse &amp; classify</b>Applicant type, development type, flagged issues</div>
+            <div class="node core"><b>Fit score 0–100</b>Gemini scoring with a rule-based fallback</div>
+            <div class="node"><b>Review</b>Pipeline, fit breakdown, evidence, dossier</div>
+            <div class="node"><b>Outreach</b>One-to-one drafts, sent manually</div>
+            <div class="node core"><b>Feeds</b>GeoSpatia Labs lead flow</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="tag">Internal research tool · Feeds GeoSpatia Labs</div>
+          <h3>CEQAnet Opportunity Desk</h3>
+          <p>An internal research desk for GeoSpatia Labs. It pulls public project filings from California's CEQAnet environmental-review database and turns them into scored, evidence-backed leads for Geospatialabs outreach.</p>
+          <dl>
+            <dt>Role</dt><dd>Designed and built it.</dd>
+            <dt>Built</dt><dd>A Python scraper and Express API that parse CEQAnet filings, classify the applicant (private developer or government) and the development type, and score GeoSpatia fit from 0 to 100 with Gemini, falling back to a rule-based scorer when no model is available. A React workspace for lead review, pipeline tracking, fit reasoning, evidence, and dossiers, with outreach drafted for manual one-to-one sending.</dd>
+            <dt>Status</dt><dd>Working prototype. Not publicly deployed.</dd>
+          </dl>
+          <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Express</span><span class="chip">Python</span><span class="chip">Gemini</span><span class="chip">Web scraping</span></div>
+          <a class="status" href="https://github.com/novalyte-logic/GeoResearch" target="_blank" rel="noopener">GitHub · GeoResearch</a>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-media">
+          <div class="diagram" aria-label="ProofReach research and outreach flow diagram">
+            <div class="node"><b>Input</b>Role posting or company URL</div>
+            <div class="node"><b>Profile</b>Parsed from pasted text or .docx</div>
+            <div class="node core"><b>Privacy guardrail</b>Only high-level skill domains reach outside tools</div>
+            <div class="node"><b>Research</b>Company brief, grounded with Firecrawl</div>
+            <div class="node"><b>Fit &amp; materials</b>Gemini with JSON response schemas</div>
+            <div class="node core"><b>Provenance on every output</b>Provider verified · AI generated, needs review · unverified</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="tag">Applied AI · Research &amp; outreach</div>
+          <h3>ProofReach: evidence-backed research &amp; outreach</h3>
+          <p>An AI research and outreach workspace. Give it a role posting or company URL and it extracts the opportunity, researches the company, analyzes fit against a structured profile, and drafts tailored materials and outreach. Every output shows where it came from.</p>
+          <dl>
+            <dt>Role</dt><dd>Designed and built it.</dd>
+            <dt>Built</dt><dd>Next.js API routes that call Gemini with JSON response schemas for extraction, company research, fit analysis, materials, and interview prep. Optional Firecrawl scraping grounds research in live page content, and Hunter domain search adds verification status to contacts. A privacy guardrail keeps names, emails, and resume text out of outside research tools, and provenance badges show whether a claim is provider-verified, AI-generated, or unverified.</dd>
+            <dt>Status</dt><dd>Working prototype. Not publicly deployed.</dd>
+          </dl>
+          <div class="chips"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Gemini structured outputs</span><span class="chip">Firecrawl</span><span class="chip">Hunter</span><span class="chip">Tailwind</span></div>
+          <a class="status" href="https://github.com/novalyte-logic/Handshake-AI" target="_blank" rel="noopener">GitHub · Handshake-AI</a>
+        </div>
+      </article>
+
+      <article class="case flip">
+        <div class="case-media">
+          <div class="diagram" aria-label="Novalyte Investor Finder flow diagram">
+            <div class="node"><b>Discover</b>Gemini with Google Search grounding</div>
+            <div class="node"><b>Context</b>Local vault of Novalyte notes and documents</div>
+            <div class="node core"><b>Match score</b>Focus and thesis overlap with Novalyte</div>
+            <div class="node"><b>Explore</b>Investor profiles and a D3 network graph</div>
+            <div class="node"><b>Compose</b>Outreach plus Gemini-drafted follow-ups</div>
+            <div class="node core"><b>Send</b>Resend or SMTP, behind an access-code gate</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="tag">Founder tooling · Fundraising</div>
+          <h3>Novalyte Investor Finder</h3>
+          <p>A fundraising workspace built for Novalyte. It finds and researches angel investors for pre-seed health-tech AI, ranks them against Novalyte's own context, and drafts and sends personalized outreach.</p>
+          <dl>
+            <dt>Role</dt><dd>Designed and built it.</dd>
+            <dt>Built</dt><dd>A React and Express app behind an access-code gate. Investor discovery, research, and contact lookup run through Gemini with Google Search grounding. A scoring model ranks investors by how their focus and thesis overlap with a local vault of Novalyte notes and documents. Includes a D3 investor network graph, an email composer, Gemini-drafted follow-ups, and sending through Resend or SMTP.</dd>
+            <dt>Status</dt><dd>Working prototype. Not publicly deployed.</dd>
+          </dl>
+          <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Express</span><span class="chip">Gemini</span><span class="chip">Google Search grounding</span><span class="chip">D3</span><span class="chip">Resend</span></div>
+          <a class="status" href="https://github.com/novalyte-logic/ivest-find" target="_blank" rel="noopener">GitHub · ivest-find</a>
+        </div>
+      </article>
+
     </div>
+
+    <p class="also"><b>Also built:</b> GTM Engineer Interview Studio, a Gemini-powered practice app for GTM-engineering interviews with scenario labs, answer scoring, and PDF session reports (prototype · <a href="https://github.com/novalyte-logic/GTM-PRACTICE" target="_blank" rel="noopener">GitHub</a>).</p>
   </div>
 </section>
 
