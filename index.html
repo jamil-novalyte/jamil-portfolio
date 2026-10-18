@@ -266,9 +266,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
           <p>A single internal control plane so one operator can run clinic acquisition, demand intelligence, workforce exchange, revenue telemetry, and platform administration without jumping between a dozen tools.</p>
           <dl>
             <dt>Role</dt><dd>Sole designer and engineer.</dd>
-            <dt>Built</dt><dd>React front end with a Node/Express API layer. Routes cover clinic search against the public CMS NPI Registry, web research (Firecrawl, Exa), Gemini-powered intelligence, Google Trends demand signals, outreach, and analytics. Includes map views (Leaflet) and a CRM pipeline board.</dd>
+            <dt>Built</dt><dd>Next.js App Router app (React 19, TypeScript) with API routes on the shared Supabase/Postgres backend. Covers a clinic CRM with a deal pipeline, an outreach and Call Center workspace with in-browser calling (Twilio Voice, Telnyx) and Vapi practice calls, clinic research and website enrichment (Firecrawl, OpenAI), patient-lead routing, clinic verification, and a Supabase Edge Function outbox that sends email through Resend and files copies to Google Drive.</dd>
           </dl>
-          <div class="chips"><span class="chip">React 19</span><span class="chip">Vite</span><span class="chip">Express</span><span class="chip">Supabase</span><span class="chip">BigQuery</span><span class="chip">Gemini / Vertex AI</span><span class="chip">Leaflet</span><span class="chip">Recharts</span><span class="chip">Vapi</span></div>
+          <div class="chips"><span class="chip">Next.js</span><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">Tailwind / shadcn/ui</span><span class="chip">Supabase / Postgres</span><span class="chip">Twilio Voice</span><span class="chip">Vapi</span><span class="chip">OpenAI</span><span class="chip">Firecrawl</span><span class="chip">Resend</span></div>
         </div>
       </article>
 
@@ -327,12 +327,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <div class="case-body">
           <div class="tag">Independent prototype</div>
           <h3>Geospatialabs: geospatial decision support</h3>
-          <p>An interactive decision-support prototype that maps regional clinic capacity against local demand signals, so operators can see where supply and demand don't line up.</p>
+          <p>Preliminary site intelligence for California solar and battery storage (BESS) development. Each brief brings grid, interconnection, parcel, permitting, and environmental context into one source-backed screen, so teams can vet candidate sites before committing deeper engineering or legal spend.</p>
           <dl>
             <dt>Role</dt><dd>Founder. Conceived, built, and deployed it.</dd>
-            <dt>Built</dt><dd>Data normalization pipelines, custom map visualizations, and query interfaces.</dd>
+            <dt>Built</dt><dd>The public site, an interactive Mapbox evidence viewer for candidate parcels, fire-hazard zones, and grid tie-ins, and a nine-section brief format that keeps sourced findings, unknowns, and conflicts separate.</dd>
           </dl>
-          <div class="chips"><span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Geospatial visualization</span></div>
+          <div class="chips"><span class="chip">Next.js</span><span class="chip">Mapbox</span><span class="chip">Vercel</span><span class="chip">Geospatial visualization</span></div>
           <a class="status" href="https://geospatialabs.com" target="_blank" rel="noopener">geospatialabs.com</a>
         </div>
       </article>
