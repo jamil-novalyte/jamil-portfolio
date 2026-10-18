@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jamil Yakasai | Robot Operator · Physical AI &amp; Robot Data Collection</title>
+<meta name="description" content="Jamil Yakasai is an applied-AI builder and former Sales Operations Analyst moving into physical AI as a Robot Operator, Teleoperator, or Robot Data Collection Operator in the SF Bay Area.">
+<style>
+:root{
+  --bg:#0c0e12; --bg-2:#12151b; --card:#161a21; --line:#252b35; --ink:#f3f5f8; --ink-2:#c9d0da; --muted:#8a94a3;
+  --accent:#f5a524; --accent-2:#ffc861; --accent-soft:rgba(245,165,36,.12); --max:1120px; --radius:14px;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.eyebrow:before{content:"// "}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(28px,3.4vw,40px);margin:10px 0 14px}
+p.lead{font-size:18px;color:var(--ink-2);max-width:740px}
+section{padding:92px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--bg-2)}
+.grid-bg{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:40px 40px}
+
+.nav{position:sticky;top:0;z-index:20;background:rgba(12,14,18,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:800;text-decoration:none;font-size:17px}
+.brand span{color:var(--accent)}
+.nav ul{display:flex;gap:26px;list-style:none}
+.nav ul a{text-decoration:none;font-size:14.5px;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;transition:.2s;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:#14100a}
+.btn-primary:hover{background:var(--accent-2)}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--accent)}
+.nav .btn{padding:8px 14px;font-size:14px}
+
+.hero{padding:84px 0 92px;border-top:0}
+.hero .wrap{display:grid;grid-template-columns:1.35fr .9fr;gap:60px;align-items:center}
+.status-line{display:inline-flex;gap:10px;align-items:center;font-family:var(--mono);font-size:12.5px;color:var(--ink-2);border:1px solid var(--line);background:var(--card);padding:6px 12px;border-radius:999px}
+.status-line i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.hero h1{font-size:clamp(40px,5.6vw,66px);font-weight:800;margin:18px 0 14px}
+.hero .role{font-size:clamp(18px,2vw,22px);font-weight:600;color:var(--accent-2);margin-bottom:16px}
+.hero p.lead{margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.roles{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.roles span{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);border:1px dashed #3a4250;padding:5px 10px;border-radius:8px}
+.portrait{justify-self:end;width:100%;max-width:360px;position:relative}
+.portrait img{border-radius:18px;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.15) contrast(1.03);border:1px solid var(--line)}
+.portrait .hud{position:absolute;inset:10px;border-radius:12px;pointer-events:none;
+  background:linear-gradient(var(--accent),var(--accent)) top left/22px 2px no-repeat,linear-gradient(var(--accent),var(--accent)) top left/2px 22px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) top right/22px 2px no-repeat,linear-gradient(var(--accent),var(--accent)) top right/2px 22px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) bottom left/22px 2px no-repeat,linear-gradient(var(--accent),var(--accent)) bottom left/2px 22px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) bottom right/22px 2px no-repeat,linear-gradient(var(--accent),var(--accent)) bottom right/2px 22px no-repeat}
+.portrait .tag{position:absolute;left:16px;bottom:16px;font-family:var(--mono);font-size:11.5px;background:rgba(12,14,18,.82);border:1px solid var(--line);padding:6px 10px;border-radius:8px;color:var(--ink-2)}
+
+.why{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+.why p{color:var(--ink-2);font-size:17px;margin-bottom:16px}
+.principles{display:grid;gap:12px}
+.principle{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:16px 18px}
+.principle b{display:block;font-size:15.5px;margin-bottom:2px}
+.principle span{color:var(--muted);font-size:14.5px}
+
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:38px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.skill.wide{grid-column:1/-1}
+.skill .num{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.skill h3{font-size:18px;margin:6px 0 12px}
+.skill ul{list-style:none;display:grid;gap:8px}
+.skill li{color:var(--ink-2);font-size:15px;padding-left:20px;position:relative}
+.skill li:before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border:2px solid var(--accent);border-radius:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:12.5px;padding:5px 10px;border-radius:8px;background:#1d222b;border:1px solid var(--line);color:var(--ink-2)}
+
+.evidence{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:38px}
+.ev{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:10px}
+.ev-head{display:flex;gap:14px;align-items:center}
+.ev-head img{width:44px;height:44px;border-radius:10px;background:#fff;padding:4px}
+.ev-head .ico{width:44px;height:44px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:14px;flex:none}
+.ev h3{font-size:18px}
+.ev .sub{font-size:13px;color:var(--muted);font-family:var(--mono)}
+.ev p{color:var(--ink-2);font-size:15px}
+.ev .maps{margin-top:auto;font-size:13.5px;color:var(--accent-2);border-top:1px solid var(--line);padding-top:12px}
+.ev .maps b{font-family:var(--mono);font-weight:600;color:var(--accent);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
+
+.timeline{margin-top:38px;display:grid;gap:16px}
+.job{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;display:grid;grid-template-columns:200px 1fr;gap:24px}
+.job .when{font-family:var(--mono);font-size:13px;color:var(--accent)}
+.job .where{color:var(--muted);font-size:13.5px;margin-top:4px}
+.job h3{font-size:18px}
+.job .org{color:var(--ink-2);font-weight:600;font-size:15px;margin-bottom:8px}
+.job ul{padding-left:18px;color:var(--ink-2);font-size:15px}
+.job li{margin:6px 0}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.edu div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:15px}
+.edu b{display:block}
+.edu span{color:var(--muted);font-size:14px}
+
+.contact{border:1px solid var(--line);background:linear-gradient(135deg,#1a1408,#161a21 60%);border-radius:22px;padding:56px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.contact p{color:var(--ink-2);font-size:17px}
+.links{display:grid;gap:12px}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 18px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);text-decoration:none;font-weight:600;word-break:break-word;transition:.2s}
+.links a:hover{border-color:var(--accent);background:var(--accent-soft)}
+.links small{display:block;font-family:var(--mono);color:var(--muted);font-weight:500;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+footer{padding:34px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:960px){
+  .hero .wrap,.why,.contact{grid-template-columns:1fr}
+  .portrait{justify-self:start;max-width:320px}
+  .evidence{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  section{padding:64px 0}
+  .wrap{padding:0 20px}
+  .nav ul{display:none}
+  .hero{padding:44px 0 64px}
+  .hero .wrap{gap:36px}
+  .portrait{max-width:none}
+  .skills,.edu{grid-template-columns:1fr}
+  .skill.wide{grid-column:auto}
+  .job{grid-template-columns:1fr;gap:8px;padding:22px 20px}
+  .contact{padding:36px 22px;border-radius:18px}
+  .status-line{font-size:11.5px;border-radius:10px;padding:6px 10px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Jamil Yakasai<span>_</span></a>
+    <ul>
+      <li><a href="#why">Why physical AI</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#evidence">Evidence</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero grid-bg" id="top">
+  <div class="wrap">
+    <div>
+      <div class="status-line"><i></i>Open to robot operator roles · SF Bay Area</div>
+      <h1>Jamil Yakasai</h1>
+      <p class="role">Robot Operator · Physical AI &amp; Robot Data Collection</p>
+      <p class="lead">I'm an applied-AI product builder and former Sales Operations Analyst moving into physical AI. I've built LLM workflows and data pipelines, I understand how training data shapes model behavior, and I bring a rigorous approach to data hygiene, validation, and process discipline. I want to produce consistent, high-quality teleoperation data engineers can trust.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#skills">Operator-ready skills →</a>
+        <a class="btn btn-ghost" href="#evidence">Supporting work</a>
+      </div>
+      <div class="roles"><span>Robot Operator</span><span>Teleoperator</span><span>Robot Data Collection Operator</span></div>
+    </div>
+    <div class="portrait">
+      <img src="assets/jamil-headshot.jpg" alt="Portrait of Jamil Yakasai" width="640" height="640">
+      <div class="hud"></div>
+      <div class="tag">San Francisco, CA</div>
+    </div>
+  </div>
+</header>
+
+<section id="why">
+  <div class="wrap why">
+    <div>
+      <div class="eyebrow">Why physical AI</div>
+      <h2>Good robot learning starts with good data.</h2>
+      <p>My work in AI systems taught me one thing over and over: a model is only as reliable as the data it learns from. At Zendesk and Novalyte AI I've cleaned, deduplicated, matched, and validated data so the AI workflows downstream behaved predictably.</p>
+      <p>Robot learning raises the stakes. I'm motivated to be the operator whose demonstrations are consistent, well-documented, and ready to train on, and who reports issues to engineers clearly.</p>
+    </div>
+    <div class="principles">
+      <div class="principle"><b>Consistency over speed</b><span>Comfortable with repetitive, consistency-critical work. The same process, every time.</span></div>
+      <div class="principle"><b>Data you can trust</b><span>Validation and hygiene built in. I understand how data quality drives AI model behavior.</span></div>
+      <div class="principle"><b>Clear reporting</b><span>Precise reporting to technical and executive stakeholders.</span></div>
+      <div class="principle"><b>Process and safety mindset</b><span>Process improvement and disciplined, repeatable execution.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Transferable skills</div>
+    <h2>What I bring to an operator role</h2>
+    <p class="lead">These come straight from my experience operating software systems, data pipelines, and customer-facing processes.</p>
+    <div class="skills">
+      <div class="skill">
+        <div class="num">01</div>
+        <h3>Robot operations readiness</h3>
+        <ul>
+          <li>Operating complex systems through control interfaces and admin consoles</li>
+          <li>Monitoring telemetry and dashboards</li>
+          <li>Repeatable, process-driven execution</li>
+          <li>Cross-functional collaboration with engineers and leadership</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <div class="num">02</div>
+        <h3>Data quality &amp; annotation rigor</h3>
+        <ul>
+          <li>Data cleaning, deduplication, matching, and validation</li>
+          <li>Data normalization pipelines and CRM data hygiene</li>
+          <li>Structured outputs and JSON schemas</li>
+          <li>Understanding of how data quality drives AI/LLM model behavior</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <div class="num">03</div>
+        <h3>Operator readiness</h3>
+        <ul>
+          <li>Valid driver's license with a clean driving record, suited to on-site customer deployments and AV operator roles</li>
+          <li>Comfortable with standing and on-your-feet shifts</li>
+          <li>Comfortable with repetitive, consistency-critical work</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <div class="num">04</div>
+        <h3>Communication &amp; safety-minded process</h3>
+        <ul>
+          <li>Process improvement and workflow architecture</li>
+          <li>Precise reporting to technical and executive stakeholders</li>
+          <li>Customer-facing professionalism from enterprise sales support and inside sales</li>
+        </ul>
+      </div>
+      <div class="skill wide">
+        <div class="num">05</div>
+        <h3>Technical tools</h3>
+        <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">JavaScript / TypeScript</span><span class="chip">Git / GitHub</span><span class="chip">REST APIs</span><span class="chip">Webhooks</span><span class="chip">Supabase / Postgres</span><span class="chip">BigQuery</span><span class="chip">LLM workflows</span><span class="chip">Prompt engineering</span><span class="chip">Tool calling</span><span class="chip">Salesforce</span><span class="chip">HubSpot</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="evidence">
+  <div class="wrap">
+    <div class="eyebrow">Supporting evidence</div>
+    <h2>AI systems work behind the skills</h2>
+    <p class="lead">These aren't robotics projects. They show the same habits an operator role needs: running complex consoles, watching telemetry, and keeping data clean enough to trust.</p>
+    <div class="evidence">
+      <article class="ev">
+        <div class="ev-head"><div class="ico">RCC</div><div><h3>Revenue Command Center</h3><div class="sub">Novalyte AI · internal operator console</div></div></div>
+        <p>I built a single control plane for clinic acquisition, demand intelligence, workforce exchange, revenue telemetry, and platform administration.</p>
+        <div class="maps"><b>Maps to</b>Operating complex systems through consoles · monitoring telemetry and dashboards</div>
+      </article>
+      <article class="ev">
+        <div class="ev-head"><div class="ico">SQL</div><div><h3>End-to-end data hygiene</h3><div class="sub">Novalyte AI · Zendesk</div></div></div>
+        <p>At Novalyte I owned SQL data hygiene end to end (cleaning, deduplication, matching), keeping the data that feeds AI workflows accurate and consistent. At Zendesk I ran recurring CRM data-hygiene and validation cycles.</p>
+        <div class="maps"><b>Maps to</b>Data quality &amp; annotation rigor · consistency-critical work</div>
+      </article>
+      <article class="ev">
+        <div class="ev-head"><div class="ico">LLM</div><div><h3>AI automation workflows</h3><div class="sub">Novalyte AI</div></div></div>
+        <p>I engineered AI-enabled workflows for lead capture, enrichment, qualification scoring, routing, and CRM writeback, using LLM workflows, structured outputs, and tool calling.</p>
+        <div class="maps"><b>Maps to</b>Understanding how data shapes AI model behavior · structured outputs</div>
+      </article>
+      <article class="ev">
+        <div class="ev-head"><img src="assets/geospatialabs-logo.png" alt="" width="44" height="44"><div><h3>Geospatialabs</h3><div class="sub">Founder · independent prototype</div></div></div>
+        <p>I built and deployed an interactive decision-support prototype that maps regional clinic capacity and local demand signals, with data normalization pipelines, custom map visualizations, and query interfaces in JavaScript, Python, and SQL.</p>
+        <div class="maps"><b>Maps to</b>Data normalization pipelines · spatial data</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Experience</div>
+    <h2>Where I've worked</h2>
+    <div class="timeline">
+      <article class="job">
+        <div><div class="when">2024 – Present</div><div class="where">San Francisco, CA</div></div>
+        <div>
+          <h3>Founding GTM &amp; AI Product Builder</h3>
+          <div class="org">Novalyte AI</div>
+          <ul>
+            <li>Built the internal operator Revenue Command Center, a unified control plane for clinic acquisition, demand intelligence, workforce exchange, revenue telemetry, and platform administration.</li>
+            <li>Owned SQL data hygiene end to end (cleaning, deduplication, matching), keeping the data that feeds AI-enabled workflows accurate and consistent.</li>
+            <li>Engineered AI-enabled automation workflows for lead capture, waterfall enrichment (Clay, Apollo), qualification scoring, routing logic, and CRM writeback, applying LLM workflows, structured outputs, and tool calling.</li>
+            <li>Conceived, architected, and deployed Novalyte AI end to end as a multi-sided healthtech ecosystem, shipping patient discovery and intake journeys and clinic onboarding tools. Owned requirements, architecture, and production deployment.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div><div class="when">May 2023 – Feb 2025</div><div class="where">San Francisco, CA</div></div>
+        <div>
+          <h3>Sales Operations Analyst</h3>
+          <div class="org">Zendesk</div>
+          <ul>
+            <li>Ran recurring CRM data-hygiene and validation cycles where consistency mattered, and led process-improvement initiatives that improved pipeline visibility and enabled reliable sales-performance analysis.</li>
+            <li>Built executive dashboards that turned sales activity and pipeline data into conversion, forecasting, and performance insights for revenue leadership.</li>
+            <li>Supported North American enterprise sales teams through Salesforce workflow optimization, pipeline management, forecasting support, and operational reporting.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div><div class="when">Mar 2021 – Feb 2023</div><div class="where">Oakland, CA</div></div>
+        <div>
+          <h3>Inside Sales Representative</h3>
+          <div class="org">SolarCity</div>
+          <ul>
+            <li>Handled repeatable inside-sales customer calls for nearly two years, applying the same process consistently on every interaction and building customer-facing professionalism that carries over to on-site deployments.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <div class="eyebrow" style="margin-top:36px">Education</div>
+    <div class="edu">
+      <div><b>Maestro</b><span>A.A.S., Business, Entrepreneurship &amp; AI Innovation · Mar 2026 – Present</span></div>
+      <div><b>Georgia State University</b><span>Bachelor's degree, Psychology</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Looking for a consistent, data-minded operator?</h2>
+        <p>I'm seeking Robot Operator, Teleoperator, and Robot Data Collection Operator roles in the SF Bay Area.</p>
+      </div>
+      <div class="links">
+        <a href="mailto:mrjamilyakasai@gmail.com"><span><small>Email</small>mrjamilyakasai@gmail.com</span><span>→</span></a>
+        <a href="https://www.linkedin.com/in/sanbosay" target="_blank" rel="noopener"><span><small>LinkedIn</small>linkedin.com/in/sanbosay</span><span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><div>© 2026 Jamil Yakasai</div><div>San Francisco, CA · <a href="/">Applied-AI product version →</a></div></div>
+</footer>
+</body>
+</html>
