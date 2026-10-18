@@ -140,6 +140,27 @@ section.alt{background:var(--bg-2)}
 .contact .links a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);text-decoration:none;font-weight:600;transition:.2s;word-break:break-word}
 .contact .links a:hover{background:rgba(129,140,248,.2);border-color:#818cf8}
 .contact .links small{display:block;color:#8fa1b6;font-weight:500;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+/* services */
+.case[id],#services{scroll-margin-top:72px}
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.offer{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 24px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.offer h3{font-size:18px;margin:0 0 8px}
+.offer p{color:var(--ink-2);font-size:15px;margin:0 0 12px}
+.offer dl{display:grid;grid-template-columns:86px 1fr;gap:6px 12px;font-size:14px;margin:0 0 14px}
+.offer dt{color:var(--muted);font-weight:600}
+.offer dd{color:var(--ink-2)}
+.offer .price{font-weight:700;color:var(--ink)}
+.offer .proof{margin-top:auto;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.offer .proof a{color:var(--accent);font-weight:600}
+.partner{grid-column:span 1;background:var(--navy);color:#dfe9f2;border-color:transparent}
+.partner h3{color:#fff}
+.partner p,.partner dd{color:#c7d2e0}
+.partner dt{color:#a5b4fc}
+.partner .proof{color:#9fb0c3;border-top-color:rgba(255,255,255,.14)}
+.svc-note{font-size:13.5px;color:var(--muted);margin-top:18px}
+.svc-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+@media (max-width:960px){.offers{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.offers{grid-template-columns:1fr}.offer dl{grid-template-columns:1fr;gap:0}.offer dd{margin-bottom:6px}}
 footer{padding:36px 0 48px;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
@@ -186,6 +207,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       <li><a href="#work">Work</a></li>
       <li><a href="#experience">Background</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
     </ul>
     <a class="btn btn-primary" href="#contact">Get in touch</a>
   </div>
@@ -259,7 +281,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </div>
       </article>
 
-      <article class="case flip">
+      <article class="case flip" id="rcc">
         <div class="case-media has-shot">
           <img class="shot" src="assets/revenue-command-center.jpg" alt="Revenue Command Center Call Center view with a call queue, teleprompter script, and live call panel, shown with demo clinic data" width="1200" height="710" loading="lazy">
         </div>
@@ -303,7 +325,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </div>
       </article>
 
-      <article class="case flip">
+      <article class="case flip" id="lead-automation">
         <div class="case-media has-shot">
           <img class="shot" src="assets/lead-engine.jpg" alt="AI Lead Discovery and Enrichment Engine demo interface" loading="lazy">
         </div>
@@ -319,7 +341,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </div>
       </article>
 
-      <article class="case">
+      <article class="case" id="geospatialabs">
         <div class="case-media has-shot geo-media">
           <img class="shot" src="assets/geospatialabs-site.jpg" alt="Geospatialabs homepage at geospatialabs.com, showing the hero headline and a sample parcel preview with a map" width="1200" height="1000" loading="lazy">
           <div class="geo-cap">
@@ -340,7 +362,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </div>
       </article>
 
-      <article class="case flip">
+      <article class="case flip" id="ceqanet">
         <div class="case-media has-shot">
           <img class="shot" src="assets/ceqanet-desk.jpg" alt="CEQAnet Opportunity Desk opportunities view: California CEQA filings ranked by fit score, with sector filters and Review Dossier and Draft Outreach actions, shown with the app's bundled sample filings" width="1200" height="750" loading="lazy">
         </div>
@@ -358,7 +380,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </div>
       </article>
 
-      <article class="case">
+      <article class="case" id="proofreach">
         <div class="case-media has-shot">
           <img class="shot" src="assets/proofreach.jpg" alt="ProofReach application workspace in its fictional demo mode, showing an evidence coverage score, a recommendation, and a requirement-by-requirement evidence matrix" width="1200" height="750" loading="lazy">
         </div>
@@ -376,7 +398,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         </div>
       </article>
 
-      <article class="case flip">
+      <article class="case flip" id="investor-finder">
         <div class="case-media has-shot">
           <img class="shot" src="assets/investor-finder.jpg" alt="Novalyte Investor Finder search screen with AI-suggested investor types, one-click search prompts, and a Top Matches panel" width="1200" height="650" loading="lazy">
         </div>
@@ -465,6 +487,85 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <h3>CRM, GTM &amp; revenue infrastructure</h3>
         <div class="chips"><span class="chip">Salesforce</span><span class="chip">HubSpot</span><span class="chip">Clay</span><span class="chip">Apollo</span><span class="chip">Lead capture &amp; routing</span><span class="chip">Lifecycle workflows</span><span class="chip">CRM hygiene</span><span class="chip">Pipeline telemetry</span><span class="chip">Executive reporting</span><span class="chip">Make / Zapier / n8n</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Services</div>
+    <h2>Hire me, directly or through your agency</h2>
+    <p class="lead">I take direct projects and white-label or subcontract work for agencies. For agency work I operate under your brand, inside your client's CRM and tools, and follow your delivery process.</p>
+
+    <div class="offers">
+      <div class="offer">
+        <h3>CRM cleanup &amp; dedup sprint</h3>
+        <p>HubSpot or Salesforce: audit, deduplication, field and lifecycle-stage fixes, and routing rules.</p>
+        <dl>
+          <dt>Deliverable</dt><dd>Audit findings, a deduplicated database, corrected fields and lifecycle stages, and documented routing rules.</dd>
+          <dt>Price</dt><dd><span class="price">From $1,500</span> fixed</dd>
+          <dt>Timeline</dt><dd>1–2 weeks</dd>
+        </dl>
+        <div class="proof">Related: <a href="#experience">CRM data-hygiene work at Novalyte and Zendesk</a></div>
+      </div>
+      <div class="offer">
+        <h3>GTM automation build</h3>
+        <p>Clay and Apollo enrichment, lead scoring and routing, CRM writeback, and webhooks.</p>
+        <dl>
+          <dt>Deliverable</dt><dd>A working, documented enrichment-to-CRM workflow running in your stack.</dd>
+          <dt>Price</dt><dd><span class="price">From $3,000</span> per build, or a retainer from $2,000/month</dd>
+          <dt>Timeline</dt><dd>Scoped per build</dd>
+        </dl>
+        <div class="proof">Related: <a href="#lead-automation">AI lead discovery, enrichment &amp; CRM automation</a></div>
+      </div>
+      <div class="offer">
+        <h3>AI workflows &amp; internal tools</h3>
+        <p>LLM features with structured outputs and tool calling on Supabase or Next.js, such as research agents and lead or investor finders.</p>
+        <dl>
+          <dt>Deliverable</dt><dd>A deployed internal tool or AI feature, with source code and handover notes.</dd>
+          <dt>Price</dt><dd><span class="price">From $5,000</span> fixed, or $100–150/hr</dd>
+          <dt>Timeline</dt><dd>Scoped per project</dd>
+        </dl>
+        <div class="proof">Related: <a href="#proofreach">ProofReach</a> · <a href="#investor-finder">Investor Finder</a></div>
+      </div>
+      <div class="offer">
+        <h3>RevOps &amp; executive dashboards</h3>
+        <p>Pipeline and revenue dashboards built from your CRM plus SQL or BigQuery.</p>
+        <dl>
+          <dt>Deliverable</dt><dd>Live pipeline and revenue dashboards with documented metric definitions.</dd>
+          <dt>Price</dt><dd><span class="price">From $2,500</span></dd>
+          <dt>Timeline</dt><dd>1–2 weeks</dd>
+        </dl>
+        <div class="proof">Related: <a href="#rcc">Revenue Command Center</a></div>
+      </div>
+      <div class="offer">
+        <h3>Geospatial site &amp; lead intelligence</h3>
+        <p>For solar, BESS, and energy developers: public filings turned into scored leads and maps.</p>
+        <dl>
+          <dt>Deliverable</dt><dd>A scored lead list and map views built from public filings, with sources cited.</dd>
+          <dt>Price</dt><dd><span class="price">From $3,000</span> per project</dd>
+          <dt>Timeline</dt><dd>Scoped per project</dd>
+        </dl>
+        <div class="proof">Related: <a href="#geospatialabs">Geospatialabs</a> · <a href="#ceqanet">CEQAnet Opportunity Desk</a></div>
+      </div>
+      <div class="offer partner">
+        <h3>For agency partners</h3>
+        <p>RevOps agencies, Clay/GTM shops, HubSpot and Salesforce consultancies, and AI automation shops that need extra build capacity.</p>
+        <dl>
+          <dt>Model</dt><dd>White-label or subcontract. NDA-friendly.</dd>
+          <dt>Rates</dt><dd><span class="price" style="color:#fff">$75–125/hr</span> or fixed per-project pricing</dd>
+          <dt>Starter</dt><dd>A paid $500 mini-audit or quick-win build for a first engagement</dd>
+          <dt>Turnaround</dt><dd>Scoping reply within 1 business day. Small builds in 3–5 business days.</dd>
+        </dl>
+        <div class="proof">Your brand, your client's tools, your process.</div>
+      </div>
+    </div>
+
+    <p class="svc-note">All prices are starting prices. Final pricing depends on scope.</p>
+    <div class="svc-cta">
+      <!-- TODO: swap this mailto for a Calendly (or other booking) link when one is available -->
+      <a class="btn btn-primary" href="mailto:hello@novalyteai.com?subject=Project%20inquiry">Book a 20-min intro</a>
+      <a class="btn btn-ghost" href="mailto:hello@novalyteai.com?subject=Agency%20partnership">Agency partnership</a>
     </div>
   </div>
 </section>
